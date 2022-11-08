@@ -1,43 +1,50 @@
-#include <string>
-
-using std::string;
-
+#include <iostream>
+using namespace std;
 #ifndef BOOK_H
 #define BOOK_H
-
-
 class Book
 {
     private:
-        string ISBN = "", Title = "", Author = "", Genre = "", Year = "", Price = "";
+        string ISBN;
+        string title;
+        string author;
+        string genre;
+        float price;
 
     public:
-        Book();
-        Book(string ISBN, string Title, string Author, string Year, string Genre, float Price)
+
+        Book()
+        {
+            ISBN = "isbn";
+            title = "title";
+            author = "author";
+            genre = "genre";
+            price = 0.00;
+        }
+
+        Book(int ISBN, string title, string author, string genre, float price)
         {
             this->ISBN = ISBN;
-            this->Title = Title;
-            this->Author = Author;
-            this->Year = Year;
-            this->Genre = Genre;
-            this->Price = Price;
-        };
+            this->title = title;
+            this->author = author;
+            this->genre = genre;
+            this->price = price;
+        }
 
-        // getters
-        string getISBN() { return ISBN; };
-        string getTitle() { return Title; };
-        string getAuthor() { return Author; };
-        string getYear() { return Year; };
-        string getGenre() { return Genre; };
-        float getPrice() { return Price; };
+        // setter functions
+        void setISBN(string num);
+        void setTitle(string data);
+        void setAuthor(string name);
+        void setGenre(string genre);
+        void setPrice(float data);
 
-        // setters
-        void setISBN(string ISBN) { this->ISBN = ISBN; };
-        void setTitle(string Title) { this->Title = Title; };
-        void setAuthor(string Author) { this->Author = Author; };
-        void setYear(string Year) { this->Year = Year; };
-        void setGenre(string Genre) { this->Genre = Genre; };
-        void setPrice(float Price) { this->Price = Price; };
+        // getter functions
+        string getISBN();
+        string getTitle();
+        string getAuthor();
+        string getGenre();
+        float getPrice();
+
 };
 
 #endif // BOOK_H
