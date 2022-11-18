@@ -1,1 +1,134 @@
 //User Account file
+#pragma once
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+
+class userAccount
+{
+public:
+	bool validateUser(bool validate) {};
+	int retrieveUser(int UserID) {};
+	string getEmail() {};
+	string getPassword() {};
+	string getPurchaseHistory() {};
+	string getShippingAddress() {};
+	string getPaymentInformation() {};
+
+	void setUserID(int UserID) {};
+	void setPassword(string pass) {};
+	void setPurchaseHistory(string PaymentHistory) {};
+	void setShippingAddress(string shippingAddress) {};
+	void setPaymentInformation(string PaymentInformation) {};
+	void login(string email, string pass)
+	{
+		
+		this->email = email;
+		this->pass = pass;
+
+		string response;
+		string username;
+		string newpass;
+		string address;
+
+		//creates menu loop
+		while (true)
+		{
+			cout << "Welcome to the bookshop! Would you like to login or create an account?" << endl << "1. Login to an existing account." << "2. Create a new account" << endl;
+			cin >> (response);
+
+			if (response == "1")
+			{
+				cout << "Please enter your email address:" << endl;
+			}
+			while (true)
+			{
+				cin >> (email);
+				if (this->email == email)
+				{
+					cout << "Please enter password:" << endl;
+					cin >> (pass);
+					
+					if (this->pass == pass)
+					{
+						while (true)
+						{
+							cout << "Welcome to the bookstore! What would you like to do?" << endl;
+							cout << "1. Purchase a book" << endl;
+							cout << "2. View Cart" << endl;
+							cout << "3. Check Out" << endl;
+							cout << "4. Edit Payment History" << endl;
+							cout << "5. Edit Shipping Address" << endl;
+							cout << "6. Edit Password" << endl;
+							cout << "0. Exit." << endl;
+
+							if (response == "1")
+							{
+								
+							}
+							if (response == "2")
+							{
+
+							}
+							if (response == "3")
+							{
+
+							}
+							if (response == "4")
+							{
+
+							}
+							if (response == "5")
+							{
+
+							}
+							if (response == "6")
+							{
+								cout << "Please enter your old password:" << endl;
+								while (true)
+								{
+									cin >> (pass);
+									if (this->pass != pass)
+									{
+										cout << "You have entered the incorrect password." << endl;
+										break;
+									}
+									if (this->pass == pass)
+									{
+										cout << "Enter the new password:" << endl;
+										cin >> (response);
+										response == pass;
+										
+									}
+								}
+							}
+							if (response == "0")
+							{
+								break;
+							}
+						}
+					}
+
+					if (this->pass != pass)
+					{
+						cout << "You have entered an incorrect password..." << endl;
+					}
+
+				}
+
+				if (this->email != email)
+				{
+					cout << "You have entered an incorrect email..." << endl;
+					break;
+				}
+
+			}
+		}
+	}
+private:
+	string email;
+	string pass;
+		
+};
+
