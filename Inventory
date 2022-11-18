@@ -1,1 +1,9 @@
 //Inventory file
+
+//set inititial quantities for each ISBN
+
+//book
+//choose a genre 1-5
+//cin >> response;
+//where genre = "response", get that book
+//cout book
