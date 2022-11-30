@@ -2,9 +2,12 @@
 #include <fstream>
 #include <vector>
 using namespace std;
+
 #ifndef BOOK_H
 #define BOOK_H
+
 class Book {
+  
 private:
   string ISBN;
   string title;
@@ -12,10 +15,10 @@ private:
   string year;
   string genre;
   float price;
+  
 public:
   Book();
   Book(string ISBN, string title, string author, string year, string genre, float price);
-
   void display(vector<Book> &books);
   void oneReadFile(vector<Book> &books);
   void searchGenre(string search);
